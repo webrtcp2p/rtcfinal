@@ -75,7 +75,7 @@
             <div class="form-group">
 	    
               <input id="studentName" style="color:black;" class="input-styled" type="text" class="form-control" id="" placeholder="Username" required="required" autofocus>
-			  <br/><br/><input id="studentPass" style="color:black;" class="input-styled" type="password" class="form-control" id="" placeholder="Password" required="required" autofocus>
+			  <br/><br/><input id="studentPass" style="color:black;" class="input-styled" type="password" class="form-control" onkeydown = "if (event.keyCode == 13)document.getElementById('requestExpert').click()" id="" placeholder="Password" required="required" autofocus>
               <br/><br/><br/><button id="requestExpert" class="input-styled" type="button" >Request an Expert</button>
 			  <br/><br/><button id="sRegister" class="input-styled" type="button" >Register</button>
             </div>
@@ -133,7 +133,7 @@
           <form class="form-inline">
             <div class="form-group" onsubmit='return false'>
               <input class="input-styled" type="text" style="color:black;" class="form-control" id="expertName" placeholder="Username" required="required" autofocus>
-              <br/><br/><input id="expertPass" style="color:black;" class="input-styled" type="password" class="form-control" id="" placeholder="Password" required="required" autofocus>
+              <br/><br/><input id="expertPass" style="color:black;" class="input-styled" type="password" class="form-control" onkeydown = "if (event.keyCode == 13)document.getElementById('expertSignupButton').click()" id="" placeholder="Password" required="required" autofocus>
 			  <br/><br/><br/><button id="expertSignupButton" class="input-styled" type="button">Wait for Student</button>
 			  <br/><br/><button id="eRegister" class="input-styled" type="button" >Register</button>
             </div>
