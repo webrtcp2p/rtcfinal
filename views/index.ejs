@@ -77,7 +77,7 @@
               <input id="studentName" style="color:black;" class="input-styled" type="text" class="form-control" id="" placeholder="Username" required="required" autofocus>
 			  <br/><br/><input id="studentPass" style="color:black;" class="input-styled" type="password" class="form-control" id="" placeholder="Password" required="required" autofocus>
               <br/><br/><br/><button id="requestExpert" class="input-styled" type="button" >Request an Expert</button>
-			  <br/><br/><button id="sRegister" class="input-styled" class="hov" type="button" >Register</button>
+			  <br/><br/><button id="sRegister" class="input-styled" type="button" >Register</button>
             </div>
           </form>
 		</div>
@@ -197,7 +197,7 @@
   
           <form class="send-message form-inline" onsubmit='return false'>
             <div class="form-group">
-			  <input id="myMessage" class="input-styled" type="text" class="form-control" id="" value="" placeholder="Enter your message" autofocus>
+			  <input id="myMessage" class="input-styled" type="text" class="form-control" onkeydown = "if (event.keyCode == 13)document.getElementById('sendMessage').click()" id="" value="" placeholder="Enter your message" autofocus>
 			  <button id="sendMessage" class="input-styled" type="button">Send Message</button>
             </div>
           </form>
