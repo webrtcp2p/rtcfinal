@@ -10,7 +10,7 @@ var videoPageDiv = document.querySelector("#videoPage");
 var studentName = document.querySelector("#studentName");
 var studentPass = document.querySelector("#studentPass");
 var expertName = document.querySelector("#expertName");
-var expertSpecialty = document.querySelector("#expertSpecialty");
+var expertPass = document.querySelector("#expertPass");
 var enterAsStudent = document.querySelector("#enterAsStudent");
 var requestExpert = document.querySelector("#requestExpert");
 var requestExpertForm = document.querySelector("#requestExpertForm");
@@ -71,7 +71,7 @@ sRegister.addEventListener('click', function(ev){
 	
 	requestExpertForm.style.display = 'none';
 	waitingForExpert.style.display = 'none';
-	expertListing.style.display = 'none';
+	//expertListing.style.display = 'none';
 	studentRegister.style.display = 'block';
 	ev.preventDefault();
 }, false);
@@ -80,7 +80,7 @@ ssRegister.addEventListener('click', function(ev){
 	
 	requestExpertForm.style.display = 'block';
 	waitingForExpert.style.display = 'none';
-	expertListing.style.display = 'none';
+	//expertListing.style.display = 'none';
 	studentRegister.style.display = 'none';
 	pushdata();
 	ev.preventDefault();
@@ -101,17 +101,17 @@ function pushdata()
 }
 requestExpert.addEventListener('click', function(ev){
 	if((data.includes(studentName.value.toLowerCase())) && (spass.includes(studentPass.value.toLowerCase())))
-	{
+	{alert("Login Successful");
 	requestExpertForm.style.display = 'none';
 	waitingForExpert.style.display = 'block';
 	expertListing.style.display = 'none';
+	
 	
 	//The student joins the signaling room in socket.io
 	studentUserName = studentName.value || 'no name';
 	myName = studentUserName;
 	io.emit('signal', {"user_type": "student", "user_name": studentUserName, "user_data": "no data, just a student", "command": "joinroom"});
 	console.log("student " + studentUserName + " has joined.");
-	alert("Login Successful");
 	}else{
 	alert("Please check your details");}
 	
@@ -142,7 +142,7 @@ eRegister.addEventListener('click', function(ev){
 	
 	expertSignupForm.style.display = 'none';
 	waitingForStudent.style.display = 'none';
-	expertListing.style.display = 'none';
+	//expertListing.style.display = 'none';
 	expertRegister.style.display = 'block';
 	ev.preventDefault();
 }, false);
@@ -151,7 +151,7 @@ eeRegister.addEventListener('click', function(ev){
 	
 	expertSignupForm.style.display = 'block';
 	waitingForStudent.style.display = 'none';
-	expertListing.style.display = 'none';
+	//expertListing.style.display = 'none';
 	expertRegister.style.display = 'none';
 	pushedata();
 	ev.preventDefault();
@@ -172,17 +172,17 @@ function pushedata(){
 //Allows the expert to "sign up" by entering their name and speciality
 expertSignupButton.addEventListener('click', function(ev){
 	if((edata.includes(expertName.value.toLowerCase())) && (epass.includes(expertPass.value.toLowerCase())))
-	{
+	{alert("Login Successful");
 	expertSignupForm.style.display = 'none';
 	waitingForStudent.style.display = 'block';
 	
 	//The expert joins the signaling room in socket.io
 	expertUserName = expertName.value || 'no name';
 	myName = expertUserName;
-	io.emit('signal', {"user_type": "expert", "user_name": expertUserName, "user_data": expertSpecialty.value, "command": "joinroom"});
+	io.emit('signal', {"user_type": "expert", "user_name": expertUserName, "user_data": expertPass.value, "command": "joinroom"});
 	console.log("Mr. " + expertUserName + " has joined.");
-	alert("Login Successful");}
-	else{alert("Please check your details");}
+	
+	}else{alert("Please check your details");}
 	ev.preventDefault();
 }, false);
 
