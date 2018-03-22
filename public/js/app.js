@@ -8,6 +8,7 @@ var videoPageDiv = document.querySelector("#videoPage");
 
 //Variable declarations for other controls used on the signup pages and necessary for app flow
 var studentName = document.querySelector("#studentName");
+var studentPass = document.querySelector("#studentPass");
 var expertName = document.querySelector("#expertName");
 var expertSpecialty = document.querySelector("#expertSpecialty");
 var enterAsStudent = document.querySelector("#enterAsStudent");
@@ -36,6 +37,7 @@ var ueColl = document.querySelector("#ueColl");
 var ueSpl = document.querySelector("#ueSpl");
 
 var data = [];
+var spass = [];
 var edata = [];
 
 //Enter the application as a student and toggle the div's
@@ -85,17 +87,18 @@ ssRegister.addEventListener('click', function(ev){
 
 function pushdata()
 {
-	if (usName.value == "")
+	if (usName.value == "" &&usPass.value == "")
 	{alert("Please fill the details");
 	requestExpertForm.style.display = 'none';
 	studentRegister.style.display = 'block';
     }else{
 	data.push(usName.value.toLowerCase());
+	spass.push(usPass.value.toLowerCase());
     console.log(data);
     alert("Registered Successfully");}
 }
 requestExpert.addEventListener('click', function(ev){
-	if(data.includes(studentName.value.toLowerCase()))
+	if(data.includes(studentName.value.toLowerCase()) && spass.includes(studentPass.value.toLowerCase()))
 	{
 	requestExpertForm.style.display = 'none';
 	waitingForExpert.style.display = 'block';
@@ -153,7 +156,7 @@ eeRegister.addEventListener('click', function(ev){
 }, false);
 
 function pushedata(){
-	if (ueName.value == ""){
+	if (ueName.value == "" && uePass.value == ""){
 		alert("Please fill the details");
 		expertSignupForm.style.display = 'none';
 	    expertRegister.style.display = 'block';}
