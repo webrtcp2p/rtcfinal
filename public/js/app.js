@@ -39,6 +39,7 @@ var ueSpl = document.querySelector("#ueSpl");
 var data = [];
 var spass = [];
 var edata = [];
+var epass = [];
 
 //Enter the application as a student and toggle the div's
 enterAsStudent.addEventListener('click', function(ev){
@@ -87,7 +88,7 @@ ssRegister.addEventListener('click', function(ev){
 
 function pushdata()
 {
-	if (usName.value == "" && usPass.value == "")
+	if ((usName.value == "") || (usPass.value == ""))
 	{alert("Please fill the details");
 	requestExpertForm.style.display = 'none';
 	studentRegister.style.display = 'block';
@@ -95,10 +96,11 @@ function pushdata()
 	data.push(usName.value.toLowerCase());
 	spass.push(usPass.value.toLowerCase());
     console.log(data);
+	console.log(spass);
     alert("Registered Successfully");}
 }
 requestExpert.addEventListener('click', function(ev){
-	if(data.includes(studentName.value.toLowerCase()) && spass.includes(studentPass.value.toLowerCase()))
+	if((data.includes(studentName.value.toLowerCase())) && (spass.includes(studentPass.value.toLowerCase())))
 	{
 	requestExpertForm.style.display = 'none';
 	waitingForExpert.style.display = 'block';
@@ -156,18 +158,20 @@ eeRegister.addEventListener('click', function(ev){
 }, false);
 
 function pushedata(){
-	if (ueName.value == "" && uePass.value == ""){
+	if ((ueName.value == "") || (uePass.value == "")){
 		alert("Please fill the details");
 		expertSignupForm.style.display = 'none';
 	    expertRegister.style.display = 'block';}
 	else{
     edata.push(ueName.value.toLowerCase());
+	epass.push(uePass.value.toLowerCase());
     console.log(edata);
+	console.log(epass);
     alert("Registered Successfully");}
 }
 //Allows the expert to "sign up" by entering their name and speciality
 expertSignupButton.addEventListener('click', function(ev){
-	if(edata.includes(expertName.value.toLowerCase()))
+	if((edata.includes(expertName.value.toLowerCase())) && (epass.includes(expertPass.value.toLowerCase())))
 	{
 	expertSignupForm.style.display = 'none';
 	waitingForStudent.style.display = 'block';
