@@ -22,8 +22,19 @@ var expertListing = document.querySelector("#expertListing");
 var callExpert = document.querySelector("#callExpert");
 var enterAsExpert = document.querySelector("#enterAsExpert");
 var studentRegister = document.querySelector("#studentRegister");
+
 var usName = document.querySelector("#usName");
+var usPass = document.querySelector("#usPass");
+var usMail = document.querySelector("#usMail");
+var usColl = document.querySelector("#usColl");
+var usDept = document.querySelector("#usDept");
+
 var ueName = document.querySelector("#ueName");
+var uePass = document.querySelector("#uePass");
+var ueMail = document.querySelector("#ueMail");
+var ueColl = document.querySelector("#ueColl");
+var ueSpl = document.querySelector("#ueSpl");
+
 var data = [];
 var edata = [];
 
@@ -48,6 +59,11 @@ enterAsStudent.addEventListener('click', function(ev){
 //a expert has arrived
 
 sRegister.addEventListener('click', function(ev){
+	
+	usName.value="";
+	usPass.value="";
+	usColl.value="";
+	usDept.value="";
 	
 	requestExpertForm.style.display = 'none';
 	waitingForExpert.style.display = 'none';
@@ -111,6 +127,12 @@ enterAsExpert.addEventListener('click', function(ev){
 }, false);
 
 eRegister.addEventListener('click', function(ev){
+	
+	ueName.value="";
+	uePass.value="";
+	ueMail.value="";
+	ueColl.value="";
+	ueSpl.value="";
 	
 	expertSignupForm.style.display = 'none';
 	waitingForStudent.style.display = 'none';
