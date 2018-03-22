@@ -87,11 +87,12 @@ ssRegister.addEventListener('click', function(ev){
 
 function pushdata()
 {
-	if (usName.value == "" && usPass.value == "")
+	if (usName.value == ""){
+		if(usPass.value == ""){
 	{alert("Please fill the details");
 	requestExpertForm.style.display = 'none';
 	studentRegister.style.display = 'block';
-    }else{
+    }}else{
 	data.push(usName.value.toLowerCase());
 	spass.push(usPass.value.toLowerCase());
     console.log(data);
