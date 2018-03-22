@@ -63,6 +63,7 @@ sRegister.addEventListener('click', function(ev){
 	usName.value="";
 	usPass.value="";
 	usColl.value="";
+	usMail.value="";
 	usDept.value="";
 	
 	requestExpertForm.style.display = 'none';
