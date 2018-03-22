@@ -305,7 +305,7 @@ ul {
 .send-message button{
   width: 140px;
   background: #3b5386;
-  height:40px;
+  height:35px;
 }
 .send-message button:hover{
   background: #7c86d6;
