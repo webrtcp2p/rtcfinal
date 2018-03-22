@@ -78,6 +78,8 @@ sRegister.addEventListener('click', function(ev){
 
 ssRegister.addEventListener('click', function(ev){
 	
+	studentName.value="";
+	studentPass.value="";
 	requestExpertForm.style.display = 'block';
 	waitingForExpert.style.display = 'none';
 	//expertListing.style.display = 'none';
@@ -149,6 +151,8 @@ eRegister.addEventListener('click', function(ev){
 
 eeRegister.addEventListener('click', function(ev){
 	
+	expertName.value="";
+	expertPass.value="";
 	expertSignupForm.style.display = 'block';
 	waitingForStudent.style.display = 'none';
 	//expertListing.style.display = 'none';
