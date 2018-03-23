@@ -67,6 +67,14 @@ ul {
   margin: 10px auto 0;
   text-align: center;
 }
+
+#studentRegister {
+  height:450px;
+}
+
+#expertRegister {
+  height:450px;
+}
 .starter-call-to-action .call-group{
   display: inline-block;
   background: rgb(0, 0, 0);
